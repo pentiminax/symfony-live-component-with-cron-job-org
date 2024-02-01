@@ -32,10 +32,10 @@ class EventRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('event');
 
-//        $qb
-//            ->where('event.date > :now')
-//            ->setParameter('now', new \DateTime())
-//        ;
+        $qb
+            ->where('event.date > :now')
+            ->setParameter('now', new \DateTime())
+        ;
 
         return $qb->getQuery()->getResult();
     }

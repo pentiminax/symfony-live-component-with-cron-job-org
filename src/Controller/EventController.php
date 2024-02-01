@@ -11,8 +11,7 @@ class EventController extends AbstractController
 {
     public function __construct(
         private readonly EventService $eventService
-    )
-    {
+    ) {
     }
 
     #[Route('/check-events', name: 'app_event', methods: ['POST'], condition: "request.headers.get('X-AUTH') == 'CRON-JOB'")]
