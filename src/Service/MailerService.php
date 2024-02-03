@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Entity\Event;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 
@@ -11,7 +12,8 @@ class MailerService
 {
 
     public function __construct(
-        private readonly MailerInterface $mailer
+        private readonly MailerInterface $mailer,
+        #[Autowire('%admin_email%')] private string $adminEmail
     ) {
     }
 
@@ -20,8 +22,8 @@ class MailerService
         $email = new TemplatedEmail();
 
         $email
-            ->from('tanguy.lemarie6@gmail.com')
-            ->to('tanguy.lemarie6@gmail.com')
+            ->from($this->adminEmail)
+            ->to($this->adminEmail)
             ->subject(sprintf('Votre évènement %s commence bientôt', $event->getName()))
             ->htmlTemplate('emails/event.html.twig')
             ->context([
