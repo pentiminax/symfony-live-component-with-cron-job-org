@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -19,4 +18,5 @@
 /assets/vendor/
 ###< symfony/asset-mapper ###
 
+compose.override.yaml
 /.idea
