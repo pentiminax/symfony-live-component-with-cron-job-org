@@ -10,14 +10,14 @@ class BeerService
 {
     public function __construct(
         private readonly BeerRepository $beerRepository,
-        private readonly HttpClientInterface $dummyJsonClient
+        private readonly HttpClientInterface $beerClient
     ){
     }
 
     public function addRandomBeer(): void
     {
         $data = $this
-            ->dummyJsonClient
+            ->beerClient
             ->request('GET', 'https://random-data-api.com/api/v2/beers/')
             ->toArray();
 
