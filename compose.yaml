@@ -13,7 +13,7 @@ services:
       - database_data:/var/lib/postgresql/data:rw
 
   php:
-    build: .
+    image: pentiminax/time-teller:latest
     environment:
       SERVER_NAME: ${SERVER_NAME:-localhost}
     ports:
