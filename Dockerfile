@@ -4,6 +4,10 @@ ENV SERVER_NAME=${SERVER_NAME:-localhost}
 
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y \
+      libnss3-tools \
+    ;
+
 RUN set -eux; \
 	install-php-extensions \
 		@composer \
