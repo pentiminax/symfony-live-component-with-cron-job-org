@@ -1,6 +1,6 @@
 FROM dunglas/frankenphp
 
-ENV SERVER_NAME=localhost
+ENV SERVER_NAME=${SERVER_NAME:-localhost}
 
 WORKDIR /app
 

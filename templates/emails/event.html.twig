@@ -3,5 +3,5 @@ Bonjour,
 Votre évènement {{ event.name }} commence le {{ event.date|date('d/m/Y') }} à {{ event.date|date('H:i') }}.
 
 {% if event.comment %}
-    {{ comment }}
+    {{ event.comment }}
 {% endif %}
