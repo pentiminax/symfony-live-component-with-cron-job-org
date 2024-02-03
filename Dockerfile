@@ -1,7 +1,5 @@
 FROM dunglas/frankenphp
 
-ENV SERVER_NAME=${SERVER_NAME:-localhost}
-
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
